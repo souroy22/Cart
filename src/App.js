@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import items from "./Items";
 
 function App() {
+  const { products } = items;
+  const [cartItems, setCartItems] = useState([]);
+  const addItem = (product) => {
+    const isExist = cartItems.find((x) => x.id === product.id);
+    if (isExist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...isExist, qty: isExist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+  };
+
+  const removeItem = (product) => {
+    const isExist = cartItems.find((x) => x.id === product.id);
+    if (isExist.qty < 2) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...isExist, qty: isExist.qty - 1 } : x
+        )
+      );
+    }
+  };
+
+  const deleteAll = () => {
+    if (cartItems.length >= 1) {
+      setCartItems([]);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header className="header-section" cartItems={cartItems} />
+      <div className="main-sec">
+        <Main products={products} addItem={addItem} />
+        <Cart
+          cartItems={cartItems}
+          deleteAll={deleteAll}
+          removeItem={removeItem}
+          addItem={addItem}
+        />
+      </div>
     </div>
   );
 }
