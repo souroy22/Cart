@@ -16,7 +16,7 @@ const Cart = (props) => {
         </button>
       )}
       <div className="cartItems-section">
-        {cartItems.length === 0 && <h1>Cart is Empty</h1>}
+        {cartItems.length === 0 && <h2>Cart is Empty :(</h2>}
         {cartItems.map((item) => (
           <div key={item.id} className="cartProduct-container">
             <div className="cartImage-container">

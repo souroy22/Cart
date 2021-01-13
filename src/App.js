@@ -17,7 +17,7 @@ function App() {
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
+      setCartItems([ { ...product, qty: 1 }, ...cartItems]);
     }
   };
 
