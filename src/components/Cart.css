@@ -33,7 +33,7 @@
   margin-top: 10px;
   width: 60%;
   padding: 20px;
-  display: flex;
+  display: inline-block;
   flex-wrap: wrap;
   border-right: 1px solid gray;
 }
@@ -43,7 +43,7 @@
   justify-content: space-between;
   margin: 10px;
   margin-bottom: 30px;
-  width: 80%;
+  /* width: 80%; */
   padding: 10px;
   flex-wrap: wrap;
   box-shadow: 5px 5px 5px rgb(190, 189, 189);
@@ -95,6 +95,17 @@
   border: none;
 }
 
+.price-details {
+  margin-top: 20px;
+  height: auto;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  margin-left: 3%;
+  padding: 5px;
+  text-align: center;
+}
+
 .price {
   font-size: 22px;
   font-weight: bolder;
@@ -113,17 +124,6 @@ button:focus {
   background-color: black;
 }
 
-.price-details {
-  margin-top: 20px;
-  text-align: end;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  position: absolute;
-  right: 37px;
-  top: 112px;
-  border: 1px solid black;
-  padding: 10px;
-}
 
 .red{
   color: brown;

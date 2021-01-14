@@ -1,5 +1,7 @@
-.main-section {
-  /* width: 60%; */
+.main-section{
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .inlineBlock{
@@ -7,19 +9,20 @@
 }
 
 .products-container {
-  /* border: 2px solid black; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .searchBar{
-  display: inline-block;
   margin-left: 30px;
+  margin: auto;
+  width: 1000px;
+  text-align: center;
 }
 
 .searchBar input {
-  width: 350px;
+  width: 450px;
   font-size: 20px;
   border: none;
   margin: 10px;
