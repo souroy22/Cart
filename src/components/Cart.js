@@ -15,7 +15,9 @@ const Cart = (props) => {
         </button>
       )}
       <div className="cartItems-section">
-        {cartItems.length === 0 && <h2 className="cartsection-title">Cart is Empty :(</h2>}
+        {cartItems.length === 0 && (
+          <h2 className="cartsection-title">Cart is Empty :(</h2>
+        )}
         {cartItems.map((item) => (
           <div key={item.id} className="cartProduct-container">
             <div className="cartImage-container">
@@ -34,18 +36,16 @@ const Cart = (props) => {
             <div className="price">{item.qty * item.price}</div>
           </div>
         ))}
-        {cartItems.length !== 0 && (
-          <>
-            <div className="line"></div>
-            <div className="price-details">
-              <h3>Total Item Price = ₹{totalItemPrice}</h3>
-              <h3>Tax GST =  ₹{tax.toFixed(0)}</h3>
-              <h3>Shipping Charge = ₹{shippingCharge}</h3>
-              <h2>Total Price = ₹{totalPrice.toFixed(0)}</h2>
-            </div>
-          </>
-        )}
       </div>
+      {cartItems.length !== 0 && (
+        <div className="price-details">
+          <h3>Total Item Price = ₹{totalItemPrice}</h3>
+          <h3>Tax GST = ₹{tax.toFixed(0)}</h3>
+          <h3>Shipping Charge = ₹{shippingCharge}</h3>
+          <hr />
+          <h2 className="red">Total Price = ₹{totalPrice.toFixed(0)}</h2>
+        </div>
+      )}
     </div>
   );
 };

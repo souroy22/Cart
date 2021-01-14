@@ -8,7 +8,7 @@ const Main = (props) => {
 
   return (
     <div className="main-section">
-      <h1 className="inlineBlock">Products</h1>
+     
       <div className="searchBar">
         <input
           type="text"

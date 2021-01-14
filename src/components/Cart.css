@@ -1,4 +1,4 @@
-.cartsection-title{
+.cartsection-title {
   text-align: center;
   margin: 0;
   padding: 0;
@@ -31,19 +31,19 @@
 
 .cartItems-section {
   margin-top: 10px;
-  width: 100%;
+  width: 60%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  display: inline-block;
+  border-right: 1px solid gray;
 }
 
 .cartProduct-container {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
   margin-bottom: 30px;
-  width: 95%;
+  width: 80%;
   padding: 10px;
   flex-wrap: wrap;
   box-shadow: 5px 5px 5px rgb(190, 189, 189);
@@ -107,7 +107,9 @@ button:focus {
 
 .line {
   width: 95%;
-  border: solid 0.1rem;
+  margin: 0;
+  padding: 0;
+  border: solid 1px black;
   background-color: black;
 }
 
@@ -116,4 +118,13 @@ button:focus {
   text-align: end;
   letter-spacing: 1px;
   word-spacing: 2px;
+  position: absolute;
+  right: 37px;
+  top: 112px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.red{
+  color: brown;
 }
