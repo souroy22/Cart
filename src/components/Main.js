@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./Product";
-import './Main.css';
+import "./Main.css";
 
 const Main = (props) => {
   const { products, addItem } = props;
-//   console.log(products);
+  const [searchItems, setSearchItems] = useState("");
+
   return (
     <div className="main-section">
-      <h1>Products</h1>
+      <h1 className="inlineBlock">Products</h1>
+      <div className="searchBar">
+        <input
+          type="text"
+          placeholder="Search for Products.."
+          onChange={(e) => setSearchItems(e.target.value)}
+        />
+      </div>
       <div className="products-container">
-        {products.map((product) => (
+        {products.filter((val) => {
+          if(searchItems === ""){
+            return val;
+          }
+          else if(val.name.toLowerCase().includes(searchItems.toLowerCase())){
+            return val;
+          }
+        }).map((product) => (
           <Product key={product.id} product={product} addItem={addItem} />
         ))}
       </div>

@@ -1,11 +1,33 @@
-.main-section{
-  width: 60%;
+.main-section {
+  /* width: 60%; */
+}
+
+.inlineBlock{
+  display: inline-block;
 }
 
 .products-container {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* width: 60%; */
+}
+
+.searchBar{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.searchBar input {
+  width: 350px;
+  font-size: 20px;
+  border: none;
+  margin: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-bottom: 2px solid navy;
+}
+
+.searchBar input:focus {
+  outline-style: none;
 }

@@ -9,14 +9,13 @@ const Cart = (props) => {
   const totalPrice = totalItemPrice + tax + shippingCharge;
   return (
     <div className="cart-container">
-      <h1>Cart Section</h1>
       {cartItems.length !== 0 && (
         <button onClick={deleteAll} className="deleteAll-button">
           Clear Cart
         </button>
       )}
       <div className="cartItems-section">
-        {cartItems.length === 0 && <h2>Cart is Empty :(</h2>}
+        {cartItems.length === 0 && <h2 className="cartsection-title">Cart is Empty :(</h2>}
         {cartItems.map((item) => (
           <div key={item.id} className="cartProduct-container">
             <div className="cartImage-container">
@@ -40,7 +39,7 @@ const Cart = (props) => {
             <div className="line"></div>
             <div className="price-details">
               <h3>Total Item Price = ₹{totalItemPrice}</h3>
-              <h3>Tax GST = ₹{tax.toFixed(0)}</h3>
+              <h3>Tax GST =  ₹{tax.toFixed(0)}</h3>
               <h3>Shipping Charge = ₹{shippingCharge}</h3>
               <h2>Total Price = ₹{totalPrice.toFixed(0)}</h2>
             </div>

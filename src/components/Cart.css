@@ -1,10 +1,17 @@
+.cartsection-title{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
 .cart-container {
-  width: 35%;
-  min-height: 300px;
+  min-height: 30%;
   padding: 20px;
 }
 
 .deleteAll-button {
+  display: inline-block;
   font-size: 22px;
   padding: 7px;
   border-radius: 20px;
@@ -14,6 +21,7 @@
   font-weight: bolder;
   box-shadow: 3px 3px 2px gray;
   transition: all 0.2s ease-in;
+  margin-left: 88%;
 }
 
 .deleteAll-button:hover {
@@ -24,11 +32,11 @@
 .cartItems-section {
   margin-top: 10px;
   width: 100%;
-  border: 1px solid black;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  display: inline-block;
 }
 
 .cartProduct-container {
@@ -99,7 +107,7 @@ button:focus {
 
 .line {
   width: 95%;
-  border: solid 1px;
+  border: solid 0.1rem;
   background-color: black;
 }
 

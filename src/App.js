@@ -17,7 +17,7 @@ function App() {
         )
       );
     } else {
-      setCartItems([ { ...product, qty: 1 }, ...cartItems]);
+      setCartItems([{ ...product, qty: 1 }, ...cartItems]);
     }
   };
 
@@ -42,15 +42,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header className="header-section" cartItems={cartItems} />
+      <Header
+        className="header-section"
+        cartItems={cartItems}
+        cartItems={cartItems}
+        deleteAll={deleteAll}
+        removeItem={removeItem}
+        addItem={addItem}
+      />
       <div className="main-sec">
         <Main products={products} addItem={addItem} />
-        <Cart
-          cartItems={cartItems}
-          deleteAll={deleteAll}
-          removeItem={removeItem}
-          addItem={addItem}
-        />
       </div>
     </div>
   );
